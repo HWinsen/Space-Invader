@@ -29,6 +29,7 @@ namespace Sapi.SpaceInvader.Home
             _view.SetCloseButtonListener(OnCloseButtonClicked);
             _view.SetBgmButtonListener(OnBgmButtonClicked);
             _view.SetSfxButtonListener(OnSfxButtonClicked);
+            _view.SetCreditsButtonListener(OnCreditsButtonClicked);
 
             yield return null;
         }
@@ -64,6 +65,11 @@ namespace Sapi.SpaceInvader.Home
         {
             _audioController.ToggleMuteSfx();
             _view.UpdateSfxState(_audioController.IsSfxMuted);
+        }
+
+        private void OnCreditsButtonClicked()
+        {
+            _view.UpdateCreditsText("Sapiscow");
         }
     }
 }
